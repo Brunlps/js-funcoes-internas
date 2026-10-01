@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Produtos</title>
+
+    <!-- Tailwind Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        spotify: "#1DB954",
+                        spotifyDark: "#191414"
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-gray-100 text-gray-900">
+
+    <!-- HEADER -->
+    <header class="bg-spotifyDark text-white shadow-lg">
+
+        <div class="max-w-7xl mx-auto px-6 py-6">
+
+            <h1 class="text-3xl font-bold">
+                Loja de Produtos
+            </h1>
+
+            <p class="text-gray-400 mt-1">
+                Encontre o produto que você procura
+            </p>
+
+        </div>
+
+    </header>
+
+
+    <!-- FILTROS -->
+    <main class="max-w-7xl mx-auto px-6 py-8">
+
+        <section class="bg-white rounded-xl shadow-md p-6 mb-8">
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                <!-- PESQUISA -->
+                <div>
+
+                    <label
+                        for="pesquisa"
+                        class="block font-semibold mb-2"
+                    >
+                        Pesquisar produto
+                    </label>
+
+                    <input
+                        type="text"
+                        id="pesquisa"
+                        placeholder="Digite o nome do produto..."
+                        class="
+                            w-full
+                            border
+                            border-gray-300
+                            rounded-lg
+                            px-4
+                            py-3
+                            focus:outline-none
+                            focus:ring-2
+                            focus:ring-spotify
+                        "
+                    >
+
+                </div>
+
+
+                <!-- CATEGORIA -->
+                <div>
+
+                    <label
+                        for="categoria"
+                        class="block font-semibold mb-2"
+                    >
+                        Categoria
+                    </label>
+
+                    <select
+                        id="categoria"
+                        class="
+                            w-full
+                            border
+                            border-gray-300
+                            rounded-lg
+                            px-4
+                            py-3
+                            focus:outline-none
+                            focus:ring-2
+                            focus:ring-spotify
+                        "
+                    >
+
+                        <option value="todos">
+                            Todas as categorias
+                        </option>
+
+                        <option value="men's clothing">
+                            Roupas masculinas
+                        </option>
+
+                        <option value="women's clothing">
+                            Roupas femininas
+                        </option>
+
+                        <option value="jewelery">
+                            Joias
+                        </option>
+
+                        <option value="electronics">
+                            Eletrônicos
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- ORDENAÇÃO -->
+                <div>
+
+                    <label
+                        for="ordenacao"
+                        class="block font-semibold mb-2"
+                    >
+                        Ordenar por preço
+                    </label>
+
+                    <select
+                        id="ordenacao"
+                        class="
+                            w-full
+                            border
+                            border-gray-300
+                            rounded-lg
+                            px-4
+                            py-3
+                            focus:outline-none
+                            focus:ring-2
+                            focus:ring-spotify
+                        "
+                    >
+
+                        <option value="padrao">
+                            Padrão
+                        </option>
+
+                        <option value="menor">
+                            Menor preço
+                        </option>
+
+                        <option value="maior">
+                            Maior preço
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTADOR -->
+        <div class="flex justify-between items-center mb-6">
+
+            <h2 class="text-2xl font-bold">
+                Produtos
+            </h2>
+
+            <span
+                id="contador"
+                class="text-gray-500"
+            >
+                0 produtos
+            </span>
+
+        </div>
+
+
+        <!-- CARDS -->
+        <section
+            id="listaProdutos"
+            class="
+                grid
+                grid-cols-1
+                sm:grid-cols-2
+                lg:grid-cols-3
+                xl:grid-cols-4
+                gap-6
+            "
+        >
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
